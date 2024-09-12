@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        div {
-            border:1px solid black;
-        }
-        h2 {
-            font-size: 15px;
-            font-weight: bold;
-        }
-    </style>
     <head>
         <meta charset="UTF-8">
         <title>About Me</title>
+        <style>
+            h2 {
+                font-size: 15px;
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <nav>
@@ -22,20 +19,22 @@
         <h1>About Me</h1>
 
         <ol>
-            <li><strong>Tamojit Bera</strong></li>
-            <div>
+            <li style="border: 1px solid black; padding-bottom: 400px;">
+                <strong>Tamojit Bera</strong>
+                <br>
+                <img src="https://ids.si.edu/ids/deliveryService?max_w=800&id=NMAH-JN2015-5080" alt="Violin" width="315" height="470" style="float: left; border: 1px solid black;">
                 <h2>Some stuff about Tamojit</h2>
                 <ul>
                     <li>I am a CS Undergrad (Junior)</li>
                     <li>I am from India</li>
                     <li>I like gaming, reading, playing Badminton and Cricket</li>
                 </ul>
-            </div>
-            <br>
-            <li><strong>My Favourite Youtube Video</strong></li>
-            <video width="600px" height="350px" controls="controls">
-                <source src="" type="video">
-            </video>>
+            </li>
+
+            <li>
+                <strong>My Favourite Youtube Video</strong><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=XKG3dBs53RCl5bmG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </li>
         </ol>
     </body>
 </html>
