@@ -3,68 +3,71 @@
     <head>
         <meta charset="UTF-8">
         <title>My Contacts</title>
-        <style>
-            table, th, td {
-                border:1px solid black;
-                border-collapse: collapse;
-            }
-        </style>
+        <link rel="stylesheet" href="../css/style_mycontacts.css">
+        <script src="../js/script_mycontacts.js"></script>
     </head>
     <body>
         <nav>
-            <a href = "aboutme.html">About Me</a><br>
-            <a href = "mycontacts.html">My Contacts</a>
+            <ul>
+                <li><a href = "aboutme.html">About Me</a><br></li>
+                <li><a href = "mycontacts.html">My Contacts</a></li>
+            </ul>
         </nav>
 
         <h1><strong>My Contacts</strong></h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Contact Information</th>
-                    <th>email</th>
-                    <th>Website</th>
-                </tr>
-            </thead>
 
-            <tbody>
-                <tr>
-                    <td>Pratham Khandelwal</td>
-                    <td>Lind L-120<br>207 Church Street SE<br>Minneapolis, MN 55455</td>
-                    <td>Fall 24 CSCI 1133 Undergraduate TA</td>
-                    <td>khand113@umn.edu</td>
-                    <td><a href="https://www.prathamk.tech/">Website</a></td>
-                </tr>
-                <tr>
-                    <td>Rohan Kumar</td>
-                    <td>Keller Hall 3-213<br>200 Union Street SE<br>Minneapolis, MN 55455</td>
-                    <td>Fall 24 CSCI 2081 Undergraduate TA</td>
-                    <td>kumar634@umn.edu</td>
-                    <td><a href="https://www.youtube.com/">Favourite Website</a></td>
-                </tr>
-                <tr>
-                    <td>Benjamin Sebastian</td>
-                    <td>Morrill Hall 210<br>100 Church Street SE<br>Minneapolis, MN 55455</td>
-                    <td>Fall 24 CSCI 1933 Undergraduate TA</td>
-                    <td>sebas063@umn.edu</td>
-                    <td><a href="https://www.formula1.com/">Favourite Website</a></td>
-                </tr>
-                <tr>
-                    <td>Archisman Bandyopadhyay</td>
-                    <td>415 Molecular and Cellular Biology<br>420 Washington Ave SE<br>Minneapolis, MN 55455</td>
-                    <td>Fall 24 CSCI 4041 Undergraduate TA</td>
-                    <td>bandy053@umn.edu</td>
-                    <td><a href="https://schedulebuilder.umn.edu/schedules/plan/">Favourite Website</a></td>
-                </tr>
-                <tr>
-                    <td>Justin Yun</td>
-                    <td>Lind L-120<br>207 Church Street SE<br>Minneapolis, MN 55455</td>
-                    <td>Fall 24 CSCI 2011 Student</td>
-                    <td>yun00058@umn.edu</td>
-                    <td><a href="https://www.ratemyprofessors.com/professor/1852490">Favourite Website</a></td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="grid-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Contact Information</th>
+                        <th>email</th>
+                        <th>Website</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr onmouseover="chgimg('../img/mountains.jpg','Mountains')">
+                        <td>Pratham Khandelwal</td>
+                        <td>Lind L-120<br>207 Church Street SE<br>Minneapolis, MN 55455</td>
+                        <td>Fall 24 CSCI 1133 Undergraduate TA</td>
+                        <td>khand113@umn.edu</td>
+                        <td><a href="https://www.prathamk.tech/">Website</a></td>
+                    </tr>
+                    <tr onmouseover="chgimg('../img/boat.jpg','Boat')">
+                        <td>Rohan Kumar</td>
+                        <td>Keller Hall 3-213<br>200 Union Street SE<br>Minneapolis, MN 55455</td>
+                        <td>Fall 24 CSCI 2081 Undergraduate TA</td>
+                        <td>kumar634@umn.edu</td>
+                        <td><a href="https://www.youtube.com/">Favourite Website</a></td>
+                    </tr>
+                    <tr onmouseover="chgimg('../img/f1.jpg','F1')">
+                        <td>Benjamin Sebastian</td>
+                        <td>Morrill Hall 210<br>100 Church Street SE<br>Minneapolis, MN 55455</td>
+                        <td>Fall 24 CSCI 1933 Undergraduate TA</td>
+                        <td>sebas063@umn.edu</td>
+                        <td><a href="https://www.formula1.com/">Favourite Website</a></td>
+                    </tr>
+                    <tr onmouseover="chgimg('../img/dog.jpg','Dog')">
+                        <td>Archisman Bandyopadhyay</td>
+                        <td>415 Molecular and Cellular Biology<br>420 Washington Ave SE<br>Minneapolis, MN 55455</td>
+                        <td>Fall 24 CSCI 4041 Undergraduate TA</td>
+                        <td>bandy053@umn.edu</td>
+                        <td><a href="https://schedulebuilder.umn.edu/schedules/plan/">Favourite Website</a></td>
+                    </tr>
+                    <tr onmouseover="chgimg('../img/islands.jpg','Islands')">
+                        <td>Justin Yun</td>
+                        <td>Lind L-120<br>207 Church Street SE<br>Minneapolis, MN 55455</td>
+                        <td>Fall 24 CSCI 2011 Student</td>
+                        <td>yun00058@umn.edu</td>
+                        <td><a href="https://www.ratemyprofessors.com/professor/1852490">Favourite Website</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <img id="image" src="../img/gophers-mascot.png" alt="GoldyTheGopher">
+        </div>
     </body>
 </html>
