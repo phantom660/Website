@@ -1,8 +1,10 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import unquote_plus
 
+retStr = ""
 
-def submission_to_table(form_data: dict[str, str]) -> str:
+
+def submission_to_table(form_data: dict[str, str] | None) -> str:
     """
     TODO: Takes a dictionary of form parameters and returns an HTML table row
 
@@ -15,7 +17,12 @@ def submission_to_table(form_data: dict[str, str]) -> str:
      'website': 'https://canvas.umn.edu/courses/460624',
     }
     """
-    pass
+    global retStr
+    if (form_data == None):
+        return retStr
+    
+    retStr += f"<tr> <td>{form_data['cname']}</td> <td>{form_data['location']}</td> <td>{form_data['cinfo']}</td> <td>{form_data['email']}</td> <td>{form_data['website']}</td> </tr>"
+    return retStr
 
 
 # NOTE: Please read the updated function carefully, as it has changed from the
@@ -51,20 +58,30 @@ def handle_request(url: str, form_data: dict[str, str] | None):
     # to match the files you want to serve. Before you do that, make sure you
     # understand what the code is doing, specifically with the MIME types and
     # opening some files in binary mode, i.e. `open(..., "br")`.
-    elif url == "/css/style.css":
-        return open("static/css/style.css").read(), "text/css"
-    elif url == "/js/script.js":
-        return open("static/js/script.js").read(), "text/javascript"
-    elif url == "/img/Dan1.jpeg":
-        return open("static/img/Dan1.jpeg", "br").read(), "image/jpeg"
-    elif url == "/img/ryan.png":
-        return open("static/img/ryan.png", "br").read(), "image/jpeg"
-    elif url == "/img/president-cunningham.jpg":
-        return open("static/img/als.jpg", "br").read(), "image/jpeg"
-    elif url == "/img/peter.png":
-        return open("static/img/president-cunningham.jpg", "br").read(), "image/jpeg"
-    elif url == "/img/als.jpg":
-        return open("static/img/peter.png", "br").read(), "image/jpeg"
+    elif url == "/img/boat.jpg":
+        return open("static/img/boat.jpg","br").read(), "image/jpeg"
+    elif url == "/img/dog.jpg":
+        return open("static/img/dog.jpg","br").read(), "image/jpeg"
+    elif url == "/img/f1.jpg":
+        return open("static/img/f1.jpg","br").read(), "image/jpeg"
+    elif url == "/img/islands.jpg":
+        return open("static/img/islands.jpg","br").read(), "image/jpeg"
+    elif url == "/img/mountains.jpg":
+        return open("static/img/mountains.jpg","br").read(), "image/jpeg"
+    elif url == "/css/style_aboutme.css":
+        return open("static/css/style_aboutme.css").read(), "text/css"
+    elif url == "/css/style_add-contact.css":
+        return open("static/css/style_add-contact.css").read(), "text/css"
+    elif url == "/css/style_mycontacts.css":
+        return open("static/css/style_mycontacts.css").read(), "text/css"
+    elif url == "/css/style_added-contacts.css":
+        return open("static/css/style_added-contacts.css").read(), "text/css"
+    elif url == "/js/script_aboutme.js":
+        return open("static/js/script_aboutme.js").read(), "text/javascript"
+    elif url == "/js/script_add-contact.js":
+        return open("static/js/script_add-contact.js").read(), "text/javascript"
+    elif url == "/js/script_mycontacts.js":
+        return open("static/js/script_mycontacts.js").read(), "text/javascript"
     # TODO: Add update the HTML below to match your other pages and implement `submission_to_table`
     elif url == "/added-contacts.html":
         return ("""
@@ -73,27 +90,29 @@ def handle_request(url: str, form_data: dict[str, str] | None):
 <head>
     <meta charset="UTF-8">
     <title>Added Submission</title>
+    <link rel="stylesheet" href="../css/style_added-contacts.css">
 </head>
 <body>
 <header>
     <nav>
-        <div>
-            <ul>
-                <li>
-                    <a href="/mycontacts.html">My Contacts</a>
-                </li>
-                <li>
-                    <a href="/add-contact.html">Add Contact</a>
-                </li>
-                <li>
-                    <a href="/aboutme.html">About Me</a>
-                </li>
-            </ul>
-        </div>
+        <ul>
+            <li>
+                <a href="/mycontacts.html">My Contacts</a>
+            </li>
+            <li>
+                <a href="/add-contact.html">Add Contact</a>
+            </li>
+            <li>
+                <a href="/aboutme.html">About Me</a>
+            </li>
+            <li>
+                <a href = "added-contacts.html">Added Contacts</a>
+            </li>
+        </ul>
     </nav>
 </header>
-<h1>New Contacts</h1>
-<div>
+<h1><strong>New Contacts</strong></h1>
+<div id="grid-container">
     <table>
         <thead>
         <tr>
