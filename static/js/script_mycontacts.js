@@ -3,3 +3,17 @@ function chgimg(name, txt) {
     theImage.src = name;
     theImage.alt = txt;
 }
+
+function showImg(row) {
+    const img = row.querySelector('img');
+    if (img) {
+        img.style.display = 'inline';
+    }
+}
+
+function hideImg(row) {
+    const img = row.querySelector('img');
+    if (img) {
+        img.style.display = 'none';
+    }
+}

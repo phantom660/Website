@@ -10,17 +10,17 @@ tbody>tr:nth-child(odd) {
 #grid-container {
     display: grid;
     font-size: 1vw;
-    grid-template-columns: 65% auto;
+    grid-template-columns: 65% 35%;
 }
 
 #grid-container table {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
-#grid-container img {
-    width: 100%;
-    height: auto;
+#grid-container #image {
+    width: 590px;
+    height: 400px;
 }
 
 nav {
