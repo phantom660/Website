@@ -97,13 +97,13 @@ def handle_request(url: str, form_data: dict[str, str] | None):
     <nav>
         <ul>
             <li>
+                <a href="/aboutme.html">About Me</a>
+            </li>
+            <li>
                 <a href="/mycontacts.html">My Contacts</a>
             </li>
             <li>
                 <a href="/add-contact.html">Add Contact</a>
-            </li>
-            <li>
-                <a href="/aboutme.html">About Me</a>
             </li>
             <li>
                 <a href = "added-contacts.html">Added Contacts</a>

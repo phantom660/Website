@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Add Contact</title>
         <link rel="stylesheet" href="../css/style_add-contact.css">
-        <script src="../js/script_add-contact.js"></script>
+        <!-- <script src="../js/script_add-contact.js"></script> -->
     </head>
     <body>
         <nav>
@@ -20,7 +20,7 @@
 
         <form id="grid-container" action="added-contacts.html" name="contactForm" method="post">
             <div class="grid-element"><label for="cname"><strong>Name</strong></label></div>
-            <div class="grid-element"><input type="text" id="cname" name="cname" required></div>
+            <div class="grid-element"><input type="text" id="cname" name="cname" required pattern="^(?!\s)([a-zA-Z0-9]+(\s[a-zA-Z0-9]+)*)?(?!\s)$" title="Name must be alphanumeric" oninvalid="this.setCustomValidity('Please match the requested format.')" oninput="this.setCustomValidity('')"></div>
 
             <div class="grid-element"><label for="location"><strong>Location</strong></label></div>
             <div class="grid-element"><input type="text" id="location" name="location" required></div>
