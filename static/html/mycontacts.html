@@ -5,6 +5,7 @@
         <title>My Contacts</title>
         <link rel="stylesheet" href="../css/style_mycontacts.css">
         <script src="../js/script_mycontacts.js"></script>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDA5p8w5AR25nAu7LumsIdxMUemAIUZBM&loading=async&callback=initMap"></script>
     </head>
     <body>
         <nav>
@@ -33,35 +34,35 @@
                 <tbody>
                     <tr onmouseover="chgimg('../img/mountains.jpg','Mountains')" onmouseenter="showImg(this)" onmouseleave="hideImg(this)">
                         <td><img src="../img/mountains.jpg" alt="Mountains" width="30" height="30" hidden>Pratham Khandelwal</td>
-                        <td>Lind L-120<br>207 Church Street SE<br>Minneapolis, MN 55455</td>
+                        <td>Lind L-120 207, Church Street SE, Minneapolis, MN 55455</td>
                         <td>Fall 24 CSCI 1133 Undergraduate TA</td>
                         <td>khand113@umn.edu</td>
                         <td><a href="https://www.prathamk.tech/">Website</a></td>
                     </tr>
                     <tr onmouseover="chgimg('../img/boat.jpg','Boat')" onmouseenter="showImg(this)" onmouseleave="hideImg(this)">
                         <td><img src="../img/boat.jpg" alt="Boat" width="30" height="30" hidden>Rohan Kumar</td>
-                        <td>Keller Hall 3-213<br>200 Union Street SE<br>Minneapolis, MN 55455</td>
+                        <td>Keller Hall 3-213, 200 Union Street SE, Minneapolis, MN 55455</td>
                         <td>Fall 24 CSCI 2081 Undergraduate TA</td>
                         <td>kumar634@umn.edu</td>
                         <td><a href="https://www.youtube.com/">Favourite Website</a></td>
                     </tr>
                     <tr onmouseover="chgimg('../img/f1.jpg','F1')" onmouseenter="showImg(this)" onmouseleave="hideImg(this)">
                         <td><img src="../img/f1.jpg" alt="F1" width="30" height="30" hidden>Benjamin Sebastian</td>
-                        <td>Morrill Hall 210<br>100 Church Street SE<br>Minneapolis, MN 55455</td>
+                        <td>Morrill Hall 210, 100 Church Street SE, Minneapolis, MN 55455</td>
                         <td>Fall 24 CSCI 1933 Undergraduate TA</td>
                         <td>sebas063@umn.edu</td>
                         <td><a href="https://www.formula1.com/">Favourite Website</a></td>
                     </tr>
                     <tr onmouseover="chgimg('../img/dog.jpg','Dog')" onmouseenter="showImg(this)" onmouseleave="hideImg(this)">
                         <td><img src="../img/dog.jpg" alt="Dog" width="30" height="30" hidden>Archisman Bandyopadhyay</td>
-                        <td>415 Molecular and Cellular Biology<br>420 Washington Ave SE<br>Minneapolis, MN 55455</td>
+                        <td>415 Molecular and Cellular Biology, 420 Washington Ave SE, Minneapolis, MN 55455</td>
                         <td>Fall 24 CSCI 4041 Undergraduate TA</td>
                         <td>bandy053@umn.edu</td>
                         <td><a href="https://schedulebuilder.umn.edu/schedules/plan/">Favourite Website</a></td>
                     </tr>
                     <tr onmouseover="chgimg('../img/islands.jpg','Islands')" onmouseenter="showImg(this)" onmouseleave="hideImg(this)">
                         <td><img src="../img/islands.jpg" alt="Islands" width="30" height="30" hidden>Justin Yun</td>
-                        <td>Lind L-120<br>207 Church Street SE<br>Minneapolis, MN 55455</td>
+                        <td>Lind L-120, 207 Church Street SE, Minneapolis, MN 55455</td>
                         <td>Fall 24 CSCI 2011 Student</td>
                         <td>yun00058@umn.edu</td>
                         <td><a href="https://www.ratemyprofessors.com/professor/1852490">Favourite Website</a></td>
@@ -71,5 +72,6 @@
 
             <img id="image" src="../img/gophers-mascot.png" alt="GoldyTheGopher">
         </div>
+        <div id="map"></div>
     </body>
 </html>
