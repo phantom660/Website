@@ -51,6 +51,8 @@ def handle_request(url: str, form_data: dict[str, str] | None):
         return open("static/html/add-contact.html").read(), "text/html"
     elif url == "/aboutme.html":
         return open("static/html/aboutme.html").read(), "text/html"
+    elif url == "/stocks.html":
+        return open("static/html/stocks.html").read(), "text/html"
     elif url == "/img/gophers-mascot.png":
         return open("static/img/gophers-mascot.png", "br").read(), "image/png"
     # NOTE: These files may be different for your server, but we include them to
@@ -76,12 +78,18 @@ def handle_request(url: str, form_data: dict[str, str] | None):
         return open("static/css/style_mycontacts.css").read(), "text/css"
     elif url == "/css/style_added-contacts.css":
         return open("static/css/style_added-contacts.css").read(), "text/css"
+    elif url == "/css/style_stocks.css":
+        return open("static/css/style_stocks.css").read(), "text/css"
     elif url == "/js/script_aboutme.js":
         return open("static/js/script_aboutme.js").read(), "text/javascript"
     elif url == "/js/script_add-contact.js":
         return open("static/js/script_add-contact.js").read(), "text/javascript"
     elif url == "/js/script_mycontacts.js":
         return open("static/js/script_mycontacts.js").read(), "text/javascript"
+    elif url == "/js/stocks.js":
+        return open("static/js/stocks.js").read(), "text/javascript"
+    elif url == "/js/script_stocks.js":
+        return open("static/js/script_stocks.js").read(), "text/javascript"
     # TODO: Add update the HTML below to match your other pages and implement `submission_to_table`
     elif url == "/added-contacts.html":
         return ("""
