@@ -18,9 +18,9 @@ function hideImg(row) {
     }
 }
 
-var map; // bject
-var geocoder; // ect
-var markers = []; // e markers
+var map;
+var geocoder;
+var markers = [];
 
 function initMap() {
     
@@ -62,20 +62,24 @@ function placeMarkersForContacts() {
                     </div>
                 `;
 
-                const infowindow = new google.maps.InfoWindow({
+                const infowindow1 = new google.maps.InfoWindow({
+                    content: infoWindowContent
+                });
+
+                const infowindow2 = new google.maps.InfoWindow({
                     content: infoWindowContent
                 });
 
                 marker.addListener('mouseover', function () {
-                    infowindow.open(map, marker);
+                    infowindow1.open(map, name);
                 });
 
                 marker.addListener('mouseout', function () {
-                    infowindow.close();
+                    infowindow1.close();
                 });
 
                 marker.addListener('click', function () {
-                    infowindow.open(map, marker);
+                    infowindow2.open(map, marker);
                 });
 
             } else {

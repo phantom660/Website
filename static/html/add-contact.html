@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <title>Add Contact</title>
         <link rel="stylesheet" href="../css/style_add-contact.css">
-        <!-- <script src="../js/script_add-contact.js"></script> -->
+        <script src="../js/script_add-contact.js" defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDA5p8w5AR25nAu7LumsIdxMUemAIUZBM&loading=async&callback=initMap" async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDA5p8w5AR25nAu7LumsIdxMUemAIUZBM&libraries=places&callback=initMap" async defer></script>
     </head>
     <body>
         <nav>
@@ -19,24 +21,30 @@
 
         <h1><strong>Add Contact</strong></h1>
 
-        <form id="grid-container" action="added-contacts.html" name="contactForm" method="post">
-            <div class="grid-element"><label for="cname"><strong>Name</strong></label></div>
-            <div class="grid-element"><input type="text" id="cname" name="cname" required pattern="^(?!\s)([a-zA-Z0-9]+(\s[a-zA-Z0-9]+)*)?(?!\s)$" title="Name must be alphanumeric" oninvalid="this.setCustomValidity('Please match the requested format.')" oninput="this.setCustomValidity('')"></div>
+        <div id="parent-container">
 
-            <div class="grid-element"><label for="location"><strong>Location</strong></label></div>
-            <div class="grid-element"><input type="text" id="location" name="location" required></div>
+            <form id="grid-container" action="added-contacts.html" name="contactForm" method="post">
+                <div class="grid-element"><label for="cname"><strong>Name</strong></label></div>
+                <div class="grid-element"><input type="text" id="cname" name="cname" required pattern="^(?!\s)([a-zA-Z0-9]+(\s[a-zA-Z0-9]+)*)?(?!\s)$" title="Name must be alphanumeric" oninvalid="this.setCustomValidity('Please match the requested format.')" oninput="this.setCustomValidity('')" placeholder="Enter contact name"></div>
 
-            <div class="grid-element"><label for="cinfo"><strong>Contact Information</strong></label></div>
-            <div class="grid-element"><input type="text" id="cinfo" name="cinfo" required></div>
+                <div class="grid-element"><label for="location"><strong>Location</strong></label></div>
+                <div class="grid-element"><input id="addressTextField" type="text" id="location" name="location" required></div>
 
-            <div class="grid-element"><label for="email"><strong>Email</strong></label></div>
-            <div class="grid-element"><input type="email" id="email" name="email" required></div>
+                <div class="grid-element"><label for="cinfo"><strong>Contact Information</strong></label></div>
+                <div class="grid-element"><input type="text" id="cinfo" name="cinfo" required placeholder="Enter contact information"></div>
 
-            <div class="grid-element"><label for="website"><strong>Website</strong></label></div>
-            <div class="grid-element"><input type="url" id="website" name="website" required></div>
-            
-            <div class="grid-element"><br></div>
+                <div class="grid-element"><label for="email"><strong>Email</strong></label></div>
+                <div class="grid-element"><input type="email" id="email" name="email" required placeholder="Enter contact email"></div>
 
-            <div class="grid-element"><input type="submit" value="Submit"></div>
-        </form>
+                <div class="grid-element"><label for="website"><strong>Website</strong></label></div>
+                <div class="grid-element"><input type="url" id="website" name="website" required placeholder="Enter contact website"></div>
+                
+                <div class="grid-element"><br></div>
+
+                <div class="grid-element"><input type="submit" value="Submit"></div>
+            </form>
+
+            <div id="map"></div>
+
+        </div>
     </body>

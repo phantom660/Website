@@ -1,10 +1,25 @@
-#grid-container {
-    display: grid;
-    font-size: 1vw;
-    max-width: 800px;
+#parent-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1500px;
     margin: 0 auto;
+    padding: 20px;
+}
+
+#grid-container {
+    max-width: 1000px;
+    display: grid;
     grid-template-columns: 40% 60%;
-    box-shadow: 0 0 3px black;
+    padding: 20px;
+}
+
+#map {
+    flex: 1;
+    width: 500px;
+    height: 500px;
+    border: 2px solid #ccc;
 }
 
 .grid-element {
@@ -59,3 +74,4 @@ nav ul li a {
     font-size: 20px;
     color: gray;
 }
+

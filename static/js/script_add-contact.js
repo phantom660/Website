@@ -1,20 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const cname = document.getElementById("cname");
+var map;
 
-    cname.addEventListener("input", (event) => {
-        const regex = /^(?!\s)([a-zA-Z0-9]+(\s[a-zA-Z0-9]+)*)?(?!\s)$/;
-
-
-        if (!regex.test(cname.value)) {
-            cname.setCustomValidity("Please match the requested format.");
-        } else {
-            cname.setCustomValidity("");
-        }
-        
-        cname.reportValidity();
+function initMap() {
+    
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: { lat: 44.9727, lng: -93.23540000000003 }
     });
+    
+    addAutoComplete();
+}
 
-    // function validateForm() {
-    //     return cname.checkValidity();
-    // }
-});
+function addAutoComplete() {
+    const input = document.getElementById('addressTextField');
+    const autocomplete = new google.maps.places.Autocomplete(input);
+}
