@@ -1,12 +1,14 @@
 var map;
+var geocoder;
 
 function initMap() {
-    
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
         center: { lat: 44.9727, lng: -93.23540000000003 }
     });
-    
+
+    geocoder = new google.maps.Geocoder();
+
     addAutoComplete();
 }
 
