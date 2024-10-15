@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Contact</title>
+        <link rel="stylesheet" href="../css/style_stocks.css">
+        <script src="../js/stocks.js" defer></script>
+        <script src="../js/script_stocks.js" defer></script>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href = "aboutme.html">About Me</a><br></li>
+                <li><a href = "mycontacts.html">My Contacts</a></li>
+                <li><a href = "add-contact.html">Add Contact</a></li>
+                <li><a href = "added-contacts.html">Added Contacts</a></li>
+                <li><a href = "stocks.html">My Stock</a></li>
+            </ul>
+        </nav>
+
+        <h1><strong>My Stock</strong></h1>
+
+        <div id="stock-request-container">
+            <div class="stock-request-element"><label for="sym"><strong>Enter Stock Symbol</strong></label></div>
+            <div class="stock-request-element" id="symbol"><input type="text" id="sym" name="sym" placeholder="e.g. AAPL, MSFT" required></div>
+
+            <div class="stock-request-element" id="submit"><input type="submit" value="Get Stock Data"></div>
+        </div>
+        
+        <br>
+
+        <div id="stock-display-container">
+            <label for="display"><strong>API Response</strong></label>
+            <br>
+            <textarea id="display" name="display" rows="30" cols="100"></textarea>
+        </div>
+    </body>
+</html>
