@@ -1,4 +1,4 @@
-var stocks = new Stocks('1Q0CJ1D2YU2RDV71');
+var stocks = new Stocks('Q389U2UW5M159N9S');
 
 
 async function request (sym) {
@@ -8,7 +8,7 @@ async function request (sym) {
     amount: 10
    });
 
-   return JSON.stringify(result);
+   return JSON.stringify(result, null, 2);
 }
 
 

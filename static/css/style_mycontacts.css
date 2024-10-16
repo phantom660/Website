@@ -49,10 +49,24 @@ nav ul li a {
     color: gray;
 }
 
-#map {
-    height: 600px;
-    /* margin-left: 1%;
-    margin-right: 1%; */
+#directions {
+    height: 380px;
+    width: 25%;
+    float: right;
     margin-top: 2%;
     margin-bottom: 2%;
+    padding-top: 200px;
+    background-color: rgb(241, 232, 255);
+}
+
+#map {
+    float: left;
+    width: 75%;
+    height: 600px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#content {
+    padding-left: 15px;
 }

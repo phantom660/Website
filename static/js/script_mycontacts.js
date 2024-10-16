@@ -32,6 +32,61 @@ function initMap() {
     geocoder = new google.maps.Geocoder();
 
     placeMarkersForContacts();
+
+    directionsService = new google.maps.DirectionsService();
+    directionsRenderer = new google.maps.DirectionsRenderer();
+    directionsRenderer.setMap(map);
+
+    document.querySelector("input[type='submit']").addEventListener("click", function (e) {
+        e.preventDefault();
+        calculateAndDisplayRoute();
+    });
+}
+
+function calculateAndDisplayRoute() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var currentLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            var destination = document.getElementById("dirTo").value;
+
+            var selectedMode = document.querySelector("input[name='travelType']:checked").value;
+            var travelMode;
+            switch (selectedMode) {
+                case "WALK":
+                    travelMode = google.maps.TravelMode.WALKING;
+                    break;
+                case "DRIVE":
+                    travelMode = google.maps.TravelMode.DRIVING;
+                    break;
+                case "TRANS":
+                    travelMode = google.maps.TravelMode.TRANSIT;
+                    break;
+                default:
+                    travelMode = google.maps.TravelMode.DRIVING;
+                    break;
+            }
+
+            directionsService.route({
+                origin: currentLocation,
+                destination: destination,
+                travelMode: travelMode
+            }, function (response, status) {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    directionsRenderer.setDirections(response);
+                } else {
+                    alert("Directions request failed due to " + status);
+                }
+            });
+        }, function () {
+            alert("Error: The Geolocation service failed.");
+        });
+    } else {
+        alert("Error: Your browser doesn't support geolocation.");
+    }
 }
 
 function placeMarkersForContacts() {

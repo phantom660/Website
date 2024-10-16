@@ -73,6 +73,24 @@
 
             <img id="image" src="../img/gophers-mascot.png" alt="GoldyTheGopher">
         </div>
-        <div id="map"></div>
+        <div id="map-container">
+            <div id="map"></div>
+            <div id="directions">
+                <div id="content">
+                    <label for="dirTo">Directions to (from your location)</label>
+                    <input type="text" id="dirTo" name="dirTo" required>
+                    <br>
+                    <p>by</p>
+                    <input type="radio" id="walk" name="travelType" value="WALK">
+                    <label for="walk">WALK</label><br>
+                    <input type="radio" id="css" name="travelType" value="DRIVE">
+                    <label for="drive">DRIVE</label><br>
+                    <input type="radio" id="trans" name="travelType" value="TRANS">
+                    <label for="trans">TRANS</label>
+                    <br>
+                    <input type="submit" value="Go">
+                </div>
+            </div>
+        </div>
     </body>
 </html>
