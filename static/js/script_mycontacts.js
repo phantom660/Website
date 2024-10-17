@@ -29,6 +29,8 @@ function initMap() {
         center: { lat: 44.9727, lng: -93.23540000000003 }
     });
 
+    panel = document.getElementById('panel');
+
     geocoder = new google.maps.Geocoder();
 
     placeMarkersForContacts();
@@ -36,11 +38,17 @@ function initMap() {
     directionsService = new google.maps.DirectionsService();
     directionsRenderer = new google.maps.DirectionsRenderer();
     directionsRenderer.setMap(map);
+    directionsRenderer.setPanel(panel);
 
     document.querySelector("input[type='submit']").addEventListener("click", function (e) {
         e.preventDefault();
+        displayPanel();
         calculateAndDisplayRoute();
     });
+}
+
+function displayPanel() {
+    panel.style.display = 'block';
 }
 
 function calculateAndDisplayRoute() {
